@@ -1,0 +1,7 @@
+export enum AUTH_LOGIN {
+  TITLE = 'AUTH.SIGN_IN',
+  REGISTER = 'AUTH.REGISTER',
+  SUBMIT = 'AUTH.SUBMIT',
+}
+
+export enum AUTH_REGISTER {}

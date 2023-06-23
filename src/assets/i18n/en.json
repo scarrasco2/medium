@@ -1,10 +1,21 @@
 {
+  "APP": {
+    "EMPTY": ""
+  },
   "FORM": {
     "TITLE": "Hello Angular with ngx-translate!",
     "LANG": "Change language",
     "NAME": "Name",
+    "EMPTY": "",
     "VALIDATION": {
       "REQUIRED": "This field is required"
     }
+  },
+  "AUTH": {
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "SIGN_IN": "Sign in",
+    "REGISTER": "Need an account?",
+    "SUBMIT": "Login"
   }
 }
