@@ -1,7 +1,8 @@
 export interface Register {
-  user: {
-    email: string;
-    password: string;
-    username: string;
-  };
+  email: string;
+  password: string;
+  username: string;
+}
+export interface RegisterRequest {
+  user: Register;
 }

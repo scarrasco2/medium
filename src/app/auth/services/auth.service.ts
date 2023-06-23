@@ -8,7 +8,7 @@ import {
 import { LoginRequest } from '../models/login';
 import { AuthResponse } from '../models/auth.response';
 import { environment } from 'src/environments/environment';
-import { Register } from '../models/register';
+import { Register, RegisterRequest } from '../models/register';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +25,7 @@ export class AuthService {
     return this.http.get<AuthResponse>(url).pipe(map(this.getUser));
   }
 
-  register(data: Register): Observable<CurrentUser> {
+  register(data: RegisterRequest): Observable<CurrentUser> {
     const url = environment.apiUrl + '/users';
     return this.http.post<AuthResponse>(url, data).pipe(map(this.getUser));
   }

@@ -1,5 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { Register } from '../models/register';
+import { Register, RegisterRequest } from '../models/register';
 import {
   CurrentUser,
   CurrentUserRequest,
@@ -9,7 +9,7 @@ import { ApiErrors } from 'src/app/shared/models/api-errors';
 export const authActions = createActionGroup({
   source: 'Auth',
   events: {
-    Register: props<{ request: Register }>(),
+    Register: props<{ request: RegisterRequest }>(),
     'Register success': props<{ currentUser: CurrentUser }>(),
     'Register failure': props<{ errors: ApiErrors }>(),
 

@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Formly", "primeng"]
+  "cSpell.words": ["Formly", "primeng"],
+  "conventionalCommits.scopes": ["auth"]
 }

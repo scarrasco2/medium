@@ -16,6 +16,10 @@
     "PASSWORD": "Mot",
     "SIGN_IN": "Connexion",
     "REGISTER": "Besoin d’un compte",
-    "SUBMIT": "Connectez-vous"
+    "USERNAME": "Nom d’utilisateur",
+    "LOGIN": "Connectez-vous",
+    "ENROLL": "inscrire",
+    "EXISTING_ACCOUNT": "Vous avez déjà un compte existant",
+    "SIGN_UP": "S’enregistrer"
   }
 }

@@ -1,0 +1,19 @@
+<ng-container *ngIf="data$ | async as data">
+  <div class="grid">
+    <p-card class="col-6" [header]="title | translate">
+      <medium-errors *ngIf="data.apiErrors" [apiErrors]="data.apiErrors"></medium-errors>
+      <form [formGroup]="form">
+        <formly-form [fields]="fields" [form]="form"></formly-form>
+      </form>
+      <ng-template pTemplate="footer">
+        <div class="flex justify-content-between">
+          <a [routerLink]="[link]">
+            <p-button [label]="linkText | translate" [icon]="linkIcon" styleClass="p-button-link"></p-button>
+          </a>
+          <p-button [loading]="data.isSubmitting" [label]="submit | translate" type="submit" (click)="onSubmit()"
+            [icon]="submitIcon" [disabled]="form.invalid"></p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</ng-container>
