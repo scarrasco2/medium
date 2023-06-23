@@ -1,12 +1,12 @@
 <ng-container *ngIf="data$ | async as data">
-  <div class="grid">
-    <p-card class="col-6" [header]="title | translate">
+  <div class="grid justify-content-evenly">
+    <p-card class="col-12 md:col-9 lg:col-6 xl:col-4" [header]="title | translate">
       <medium-errors *ngIf="data.apiErrors" [apiErrors]="data.apiErrors"></medium-errors>
       <form [formGroup]="form">
-        <formly-form [fields]="fields" [form]="form"></formly-form>
+        <formly-form [fields]="fields" [form]="form" [model]="model"></formly-form>
       </form>
       <ng-template pTemplate="footer">
-        <div class="flex justify-content-between">
+        <div class="flex flex-wrap justify-content-between">
           <a [routerLink]="[link]">
             <p-button [label]="linkText | translate" [icon]="linkIcon" styleClass="p-button-link"></p-button>
           </a>

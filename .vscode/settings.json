@@ -1,4 +1,4 @@
 {
-  "cSpell.words": ["Formly", "primeng"],
-  "conventionalCommits.scopes": ["auth"]
+  "cSpell.words": ["Formly", "primeflex", "primeicons", "primeng"],
+  "conventionalCommits.scopes": ["auth", "translate"]
 }

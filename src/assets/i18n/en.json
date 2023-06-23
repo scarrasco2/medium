@@ -3,10 +3,6 @@
     "EMPTY": ""
   },
   "FORM": {
-    "TITLE": "Hello Angular with ngx-translate!",
-    "LANG": "Change language",
-    "NAME": "Name",
-    "EMPTY": "",
     "VALIDATION": {
       "REQUIRED": "This field is required"
     }
@@ -20,6 +16,6 @@
     "LOGIN": "Login",
     "ENROLL": "Enroll",
     "EXISTING_ACCOUNT": "Already have an existing account?",
-    "SIGN_UP": "Sign Up"
+    "SIGN_UP": "Sign up"
   }
 }

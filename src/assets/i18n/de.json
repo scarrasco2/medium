@@ -1,0 +1,22 @@
+{
+  "APP": {
+    "EMPTY": "",
+    "LANGUAGE": "Wähle eine Sprache"
+  },
+  "FORM": {
+    "VALIDATION": {
+      "REQUIRED": "Dieses Feld ist erforderlich"
+    }
+  },
+  "AUTH": {
+    "EMAIL": "Email",
+    "PASSWORD": "Passwort",
+    "USERNAME": "Benutzername",
+    "SIGN_IN": "Anmelden",
+    "REGISTER": "Benötigst du ein Konto?",
+    "LOGIN": "Einloggen",
+    "ENROLL": "Registrieren",
+    "EXISTING_ACCOUNT": "Hast du bereits ein bestehendes Konto?",
+    "SIGN_UP": "Registrieren"
+  }
+}

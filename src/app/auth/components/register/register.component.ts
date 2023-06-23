@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  DestroyRef,
   OnDestroy,
   inject,
 } from '@angular/core';
@@ -17,6 +18,7 @@ import {
 import { REGISTER_FIELDS } from './register.fields';
 import { LOGIN_URL } from '../../auth.urls';
 import { Register, RegisterRequest } from '../../models/register';
+import { Login } from '../../models/login';
 
 @Component({
   selector: 'medium-register',
@@ -27,10 +29,11 @@ export class RegisterComponent {
   router = inject(Router);
   store = inject(Store);
   form = new FormGroup({});
+  model: Partial<Login> = {};
   fields = REGISTER_FIELDS;
+  title: string = AUTH_REGISTER.TITLE;
   link = LOGIN_URL;
   linkIcon: string = AUTH_REGISTER.LINK_ICON;
-  title: string = AUTH_REGISTER.TITLE;
   linkText: string = AUTH_REGISTER.LINK_TEXT;
   submit: string = AUTH_REGISTER.SUBMIT;
   submitIcon: string = AUTH_REGISTER.SUBMIT_ICON;

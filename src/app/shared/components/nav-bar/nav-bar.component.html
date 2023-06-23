@@ -1,0 +1,23 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <a routerLink="/"><img src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2" /></a>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" (onChange)="languageSelected($event)">
+      <ng-template pTemplate="selectedItem">
+        <div class="flex align-items-center gap-2" *ngIf="selectedLanguage">
+          <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+            [class]="'flag flag-' + selectedLanguage.code.toLowerCase()" style="width: 18px" />
+          <div>{{ selectedLanguage.name }}</div>
+        </div>
+      </ng-template>
+      <ng-template let-country pTemplate="item">
+        <div class="flex align-items-center gap-2">
+          <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+            [class]="'flag flag-' + country.code.toLowerCase()" style="width: 18px" />
+          <div>{{ country.name }}</div>
+        </div>
+      </ng-template>
+    </p-dropdown>
+  </ng-template>
+</p-menubar>
