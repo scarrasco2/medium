@@ -3,23 +3,26 @@
     "EMPTY": ""
   },
   "FORM": {
-    "TITLE": "Bonjour Angular avec ngx-translate !",
-    "LANG": "Changer la langue",
-    "NAME": "Nom",
-    "EMPTY": "",
     "VALIDATION": {
       "REQUIRED": "Ce champ est requis"
     }
   },
   "AUTH": {
-    "EMAIL": "Courriel",
-    "PASSWORD": "Mot",
-    "SIGN_IN": "Connexion",
-    "REGISTER": "Besoin d’un compte",
-    "USERNAME": "Nom d’utilisateur",
-    "LOGIN": "Connectez-vous",
-    "ENROLL": "inscrire",
-    "EXISTING_ACCOUNT": "Vous avez déjà un compte existant",
-    "SIGN_UP": "S’enregistrer"
+    "EMAIL": "Email",
+    "PASSWORD": "Mot de passe",
+    "USERNAME": "Nom d'utilisateur",
+    "SIGN_IN": "Se connecter",
+    "REGISTER": "Besoin d'un compte ?",
+    "LOGIN": "Connexion",
+    "ENROLL": "S'inscrire",
+    "EXISTING_ACCOUNT": "Vous avez déjà un compte existant ?",
+    "SIGN_UP": "S'inscrire"
+  },
+  "MENU": {
+    "HOME": "Accueil",
+    "LOGIN": "Connexion",
+    "REGISTER": "Inscription",
+    "LOGOFF": "Déconnexion",
+    "ACCOUNT": "Compte"
   }
 }

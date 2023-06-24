@@ -1,4 +1,4 @@
-import { Language } from '../../models/country';
+import { Language } from '../../models/language';
 
 export const LANGUAGES: Language[] = [
   { name: 'English', code: 'EN' },

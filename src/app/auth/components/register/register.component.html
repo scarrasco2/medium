@@ -1,5 +1,5 @@
 <ng-container *ngIf="data$ | async as data">
-  <div class="grid justify-content-evenly">
+  <div class="grid justify-content-evenly w-full">
     <p-card class="col-12 md:col-9 lg:col-6 xl:col-4" [header]="title | translate">
       <medium-errors *ngIf="data.apiErrors" [apiErrors]="data.apiErrors"></medium-errors>
       <form [formGroup]="form">

@@ -1,7 +1,6 @@
 {
   "APP": {
-    "EMPTY": "",
-    "LANGUAGE": "Selecciona un idioma"
+    "EMPTY": ""
   },
   "FORM": {
     "VALIDATION": {
@@ -14,9 +13,16 @@
     "USERNAME": "Nombre de usuario",
     "SIGN_IN": "Iniciar sesión",
     "REGISTER": "¿Necesitas una cuenta?",
-    "LOGIN": "Iniciar sesión",
+    "LOGIN": "Inicio de sesión",
     "ENROLL": "Inscribirse",
     "EXISTING_ACCOUNT": "¿Ya tienes una cuenta existente?",
     "SIGN_UP": "Registrarse"
+  },
+  "MENU": {
+    "HOME": "Inicio",
+    "LOGIN": "Iniciar sesión",
+    "REGISTER": "Registrarse",
+    "LOGOFF": "Cerrar sesión",
+    "ACCOUNT": "Cuenta"
   }
 }

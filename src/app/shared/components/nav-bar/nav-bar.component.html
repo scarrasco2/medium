@@ -1,4 +1,4 @@
-<p-menubar [model]="items">
+<p-menubar [model]="(menu$ | async) ?? []">
   <ng-template pTemplate="start">
     <a routerLink="/"><img src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2" /></a>
   </ng-template>
