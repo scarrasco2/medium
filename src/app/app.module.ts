@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
+import { AppConfigComponent } from './shared/components/app-config/app-config.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
@@ -29,6 +30,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BrowserModule,
     BrowserAnimationsModule,
     NavBarComponent,
+    AppConfigComponent,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,

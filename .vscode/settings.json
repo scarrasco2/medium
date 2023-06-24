@@ -1,4 +1,11 @@
 {
-  "cSpell.words": ["Formly", "primeflex", "primeicons", "primeng"],
+  "cSpell.words": [
+    "Formly",
+    "inputswitch",
+    "primeflex",
+    "primeicons",
+    "primeng",
+    "radiobutton"
+  ],
   "conventionalCommits.scopes": ["auth", "translate", "nav-bar"]
 }

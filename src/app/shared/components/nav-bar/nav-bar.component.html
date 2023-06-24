@@ -3,6 +3,7 @@
     <a routerLink="/"><img src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2" /></a>
   </ng-template>
   <ng-template pTemplate="end">
+    <p-button class="mr-2" icon="pi pi-cog" (click)="onConfigButtonClick($event)"></p-button>
     <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" (onChange)="languageSelected($event)">
       <ng-template pTemplate="selectedItem">
         <div class="flex align-items-center gap-2" *ngIf="selectedLanguage">
