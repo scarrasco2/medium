@@ -21,6 +21,7 @@ export class LoginComponent extends RegisterComponent {
   override submitIcon = AUTH_LOGIN.SUBMIT_ICON;
 
   override onSubmit() {
+    if (this.form.invalid) return;
     const request: LoginRequest = {
       user: this.form.getRawValue() as Login,
     };
