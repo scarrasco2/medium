@@ -7,7 +7,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class AppConfigService {
   config: AppConfig = {
-    theme: 'lara-dark-purple',
+    theme: 'viva-dark',
     dark: false,
     inputStyle: 'outlined',
     ripple: true,
