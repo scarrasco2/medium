@@ -2,8 +2,6 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FORMLY_CONFIG, FormlyModule } from '@ngx-formly/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -19,6 +17,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { AppConfigComponent } from './shared/components/app-config/app-config.component';
+import { HeroComponent } from './shared/components/hero/hero.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
@@ -31,10 +30,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BrowserAnimationsModule,
     NavBarComponent,
     AppConfigComponent,
+    HeroComponent,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    FormlyPrimeNGModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

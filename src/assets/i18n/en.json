@@ -24,5 +24,11 @@
     "REGISTER": "Register",
     "LOGOFF": "Logout",
     "ACCOUNT": "Account"
+  },
+  "HERO": {
+    "TITLE": "Built by Angular v16",
+    "SUBTITLE": "Supporting tools PrimeNG, NgRx, and Formly",
+    "PRIME": "PrimeNG",
+    "ANGULAR": "Image of Angular"
   }
 }

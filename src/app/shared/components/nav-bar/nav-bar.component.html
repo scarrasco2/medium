@@ -1,6 +1,6 @@
 <p-menubar [model]="(menu$ | async) ?? []">
   <ng-template pTemplate="start">
-    <a routerLink="/" class="p-ripple p-element p-menuitem-link py-0 px-2">
+    <a routerLink="/" class="p-ripple p-element p-menuitem-link py-0 px-2 md:px-3">
       <svg width="75px" height="50px" viewBox="0 0 445 87" version="1.1" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
@@ -15,7 +15,8 @@
   </ng-template>
   <ng-template pTemplate="end">
     <p-button class="mr-2" icon="pi pi-cog" (click)="onConfigButtonClick($event)"></p-button>
-    <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" (onChange)="languageSelected($event)" class="mr-2">
+    <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" (onChange)="languageSelected($event)"
+      class="mr-2 md:mr-3">
       <ng-template pTemplate="selectedItem">
         <div class="flex align-items-center gap-2" *ngIf="selectedLanguage">
           <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
