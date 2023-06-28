@@ -15,9 +15,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { RouterLink } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { ApiErrorsComponent } from '../shared/components/api-errors/api-errors.component';
-
+import { LogoutComponent } from './components/logout/logout.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { MessagesModule } from 'primeng/messages';
 @NgModule({
-  declarations: [RegisterComponent, LoginComponent],
+  declarations: [RegisterComponent, LoginComponent, LogoutComponent],
   imports: [
     CommonModule,
     RouterLink,
@@ -29,6 +31,8 @@ import { ApiErrorsComponent } from '../shared/components/api-errors/api-errors.c
     CardModule,
     TranslateModule,
     ButtonModule,
+    MessagesModule,
+    ProgressSpinnerModule,
     StoreModule.forFeature(authFeature),
     EffectsModule.forFeature(authEffects),
   ],

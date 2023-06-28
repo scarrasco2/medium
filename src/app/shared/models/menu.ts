@@ -4,4 +4,6 @@ export interface Menu {
   LOGIN: string;
   REGISTER: string;
   ACCOUNT: string;
+  SETTINGS: string;
+  NEW_POST: string;
 }

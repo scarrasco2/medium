@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FORMLY_CONFIG, FormlyModule } from '@ngx-formly/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {
@@ -18,6 +19,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { AppConfigComponent } from './shared/components/app-config/app-config.component';
 import { HeroComponent } from './shared/components/hero/hero.component';
+import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
+import { AuthModule } from './auth/auth.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
@@ -32,6 +35,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppConfigComponent,
     HeroComponent,
     AppRoutingModule,
+    AuthModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -57,6 +61,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       multi: true,
       useFactory: registerTranslateExtension,
       deps: [TranslateService],
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
     },
   ],
   bootstrap: [AppComponent],

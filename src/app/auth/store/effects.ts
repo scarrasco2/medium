@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, of, switchMap, tap } from 'rxjs';
+import { catchError, delay, map, of, switchMap, tap } from 'rxjs';
 import { PersistanceService } from 'src/app/shared/services/persistance.service';
 import { AuthService } from '../services/auth.service';
 import { authActions } from './actions';
@@ -142,14 +142,13 @@ export const updateCurrentUserEffect = createEffect(
 export const logoutEffect = createEffect(
   (
     actions$ = inject(Actions),
-    router = inject(Router),
     persistanceService = inject(PersistanceService)
   ) => {
     return actions$.pipe(
       ofType(authActions.logout),
+      delay(30000),
       tap(() => {
         persistanceService.set('accessToken', '');
-        router.navigateByUrl('/');
       })
     );
   },

@@ -16,14 +16,17 @@
     "LOGIN": "Login",
     "ENROLL": "Enroll",
     "EXISTING_ACCOUNT": "Already have an existing account?",
-    "SIGN_UP": "Sign up"
+    "SIGN_UP": "Sign up",
+    "LOGOUT": "Logging off"
   },
   "MENU": {
     "HOME": "Home",
     "LOGIN": "Sign in",
     "REGISTER": "Register",
     "LOGOFF": "Logout",
-    "ACCOUNT": "Account"
+    "ACCOUNT": "Account",
+    "SETTINGS": "Settings",
+    "NEW_POST": "New Post"
   },
   "HERO": {
     "TITLE": "Built by Angular v16",
