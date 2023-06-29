@@ -19,7 +19,9 @@
     "SIGN_UP": "Sign up",
     "LOGOUT": "Logging off",
     "SUCCESS": "Success",
-    "LOGOUT_MESSAGE": "You have been successfully logged out"
+    "LOGOUT_MESSAGE": "You have been successfully logged out",
+    "ERROR": "Error",
+    "AUTH_FAILURE": "The email or password is incorrect"
   },
   "MENU": {
     "HOME": "Home",

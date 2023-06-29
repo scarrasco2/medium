@@ -18,6 +18,7 @@ import { ApiErrorsComponent } from '../shared/components/api-errors/api-errors.c
 import { LogoutComponent } from './components/logout/logout.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { MessagesModule } from 'primeng/messages';
+import { HotkeyModule } from 'angular2-hotkeys';
 @NgModule({
   declarations: [RegisterComponent, LoginComponent, LogoutComponent],
   imports: [
@@ -32,6 +33,7 @@ import { MessagesModule } from 'primeng/messages';
     TranslateModule,
     ButtonModule,
     MessagesModule,
+    HotkeyModule,
     ProgressSpinnerModule,
     StoreModule.forFeature(authFeature),
     EffectsModule.forFeature(authEffects),

@@ -33,7 +33,7 @@ export class LogoutComponent implements OnInit {
   authService = inject(AuthService);
   store = inject(Store);
   user$ = this.store.select(selectCurrentUser);
-  message$ = this.authService.getMessage();
+  message$ = this.authService.getLogoutMessage();
 
   ngOnInit(): void {
     this.store.dispatch(authActions.logoutTrigger());

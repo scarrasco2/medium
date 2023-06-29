@@ -12,6 +12,8 @@ import {
   selectValidationErrors,
 } from '../../store/reducers';
 import { Register, RegisterRequest } from '../../models/register';
+import { AuthService } from '../../services/auth.service';
+import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 
 @Component({
   selector: 'medium-register',
@@ -21,6 +23,7 @@ import { Register, RegisterRequest } from '../../models/register';
 export class RegisterComponent {
   router = inject(Router);
   store = inject(Store);
+  authService = inject(AuthService);
   form = new FormGroup({});
   model: Partial<Register> = {};
   fields = REGISTER_FIELDS;
@@ -34,7 +37,17 @@ export class RegisterComponent {
   data$ = combineLatest({
     isSubmitting: this.store.select(selectIsSubmitting),
     apiErrors: this.store.select(selectValidationErrors),
+    message: this.authService.getAuthErrorMessage(),
   });
+
+  constructor(private _hotkeysService: HotkeysService) {
+    this._hotkeysService.add(
+      new Hotkey('enter', (): boolean => {
+        this.onSubmit();
+        return false;
+      })
+    );
+  }
 
   onSubmit(): void {
     if (this.form.invalid) return;

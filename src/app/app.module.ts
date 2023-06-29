@@ -21,6 +21,7 @@ import { AppConfigComponent } from './shared/components/app-config/app-config.co
 import { HeroComponent } from './shared/components/hero/hero.component';
 import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 import { AuthModule } from './auth/auth.module';
+import { HotkeyModule } from 'angular2-hotkeys';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
@@ -37,6 +38,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
+    HotkeyModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

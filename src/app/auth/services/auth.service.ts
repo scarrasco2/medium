@@ -47,7 +47,7 @@ export class AuthService {
       .pipe(map(this.getUser));
   }
 
-  getMessage(): Observable<Message[]> {
+  getLogoutMessage(): Observable<Message[]> {
     return this.translate.stream('AUTH').pipe(
       map((AUTH: AuthMessage) => {
         return [
@@ -55,6 +55,20 @@ export class AuthService {
             severity: 'success',
             summary: AUTH.SUCCESS,
             detail: AUTH.LOGOUT_MESSAGE,
+          },
+        ];
+      })
+    );
+  }
+
+  getAuthErrorMessage(): Observable<Message[]> {
+    return this.translate.stream('AUTH').pipe(
+      map((AUTH: AuthMessage) => {
+        return [
+          {
+            severity: 'error',
+            summary: AUTH.ERROR,
+            detail: AUTH.AUTH_FAILURE,
           },
         ];
       })
