@@ -8,6 +8,7 @@ import { AuthService } from '../services/auth.service';
 import { authActions } from './actions';
 import { CurrentUser } from 'src/app/shared/models/current-user';
 
+const LOGOUT_DURATION = 3000;
 export const getCurrentUserEffect = createEffect(
   (
     actions$ = inject(Actions),
@@ -139,6 +140,19 @@ export const updateCurrentUserEffect = createEffect(
   { functional: true }
 );
 
+export const logoutTriggerEffect = createEffect(
+  (actions$ = inject(Actions)) => {
+    return actions$.pipe(
+      ofType(authActions.logoutTrigger),
+      delay(LOGOUT_DURATION),
+      switchMap(() => {
+        return of(authActions.logout());
+      })
+    );
+  },
+  { functional: true }
+);
+
 export const logoutEffect = createEffect(
   (
     actions$ = inject(Actions),
@@ -146,7 +160,7 @@ export const logoutEffect = createEffect(
   ) => {
     return actions$.pipe(
       ofType(authActions.logout),
-      delay(30000),
+      delay(3000),
       tap(() => {
         persistanceService.set('accessToken', '');
       })

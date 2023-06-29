@@ -16,13 +16,24 @@
     "LOGIN": "Connexion",
     "ENROLL": "S'inscrire",
     "EXISTING_ACCOUNT": "Vous avez déjà un compte existant ?",
-    "SIGN_UP": "S'inscrire"
+    "SIGN_UP": "S'inscrire",
+    "LOGOUT": "Déconnexion",
+    "SUCCESS": "Succès",
+    "LOGOUT_MESSAGE": "Vous avez été déconnecté avec succès"
   },
   "MENU": {
     "HOME": "Accueil",
-    "LOGIN": "Connexion",
-    "REGISTER": "Inscription",
+    "LOGIN": "Se connecter",
+    "REGISTER": "S'inscrire",
     "LOGOFF": "Déconnexion",
-    "ACCOUNT": "Compte"
+    "ACCOUNT": "Compte",
+    "SETTINGS": "Paramètres",
+    "NEW_POST": "Nouveau message"
+  },
+  "HERO": {
+    "TITLE": "Construit avec Angular v16",
+    "SUBTITLE": "Outils de support : PrimeNG, NgRx et Formly",
+    "PRIME": "PrimeNG",
+    "ANGULAR": "Image d'Angular"
   }
 }

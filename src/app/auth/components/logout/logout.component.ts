@@ -6,20 +6,20 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { authActions } from '../../store/actions';
-import { Message } from 'primeng/api';
 import { selectCurrentUser } from '../../store/reducers';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'medium-logout',
   template: `
     <div class="flex flex-column align-items-center">
-      <ng-container>
+      <ng-container *ngIf="user$ | async; else message">
         <h2 class="text-primary text-4xl">{{ 'AUTH.LOGOUT' | translate }}</h2>
         <p-progressSpinner></p-progressSpinner>
       </ng-container>
       <ng-template #message>
         <p-messages
-          [(value)]="messages"
+          [value]="(message$ | async) ?? []"
           [enableService]="false"
           [closable]="false"
         ></p-messages>
@@ -30,15 +30,12 @@ import { selectCurrentUser } from '../../store/reducers';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LogoutComponent implements OnInit {
+  authService = inject(AuthService);
   store = inject(Store);
-  messages: Message[] = [
-    {
-      severity: 'success',
-      summary: 'AUTH.SUCCESS',
-      detail: 'AUTH.LOGOUT.MESSAGE',
-    },
-  ];
+  user$ = this.store.select(selectCurrentUser);
+  message$ = this.authService.getMessage();
+
   ngOnInit(): void {
-    this.store.dispatch(authActions.logout());
+    this.store.dispatch(authActions.logoutTrigger());
   }
 }

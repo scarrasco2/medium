@@ -13,16 +13,27 @@
     "USERNAME": "Nombre de usuario",
     "SIGN_IN": "Iniciar sesión",
     "REGISTER": "¿Necesitas una cuenta?",
-    "LOGIN": "Inicio de sesión",
+    "LOGIN": "Iniciar sesión",
     "ENROLL": "Inscribirse",
     "EXISTING_ACCOUNT": "¿Ya tienes una cuenta existente?",
-    "SIGN_UP": "Registrarse"
+    "SIGN_UP": "Registrarse",
+    "LOGOUT": "Cerrar sesión",
+    "SUCCESS": "Éxito",
+    "LOGOUT_MESSAGE": "Has cerrado sesión correctamente"
   },
   "MENU": {
     "HOME": "Inicio",
     "LOGIN": "Iniciar sesión",
     "REGISTER": "Registrarse",
     "LOGOFF": "Cerrar sesión",
-    "ACCOUNT": "Cuenta"
+    "ACCOUNT": "Cuenta",
+    "SETTINGS": "Configuración",
+    "NEW_POST": "Nuevo post"
+  },
+  "HERO": {
+    "TITLE": "Construido con Angular v16",
+    "SUBTITLE": "Herramientas de soporte: PrimeNG, NgRx y Formly",
+    "PRIME": "PrimeNG",
+    "ANGULAR": "Imagen de Angular"
   }
 }

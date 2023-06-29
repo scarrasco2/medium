@@ -28,7 +28,7 @@ export const authActions = createActionGroup({
       currentUser: CurrentUser;
     }>(),
     'Update current user failure': props<{ errors: ApiErrors }>(),
-
+    'Logout trigger': emptyProps(),
     Logout: emptyProps(),
   },
 });

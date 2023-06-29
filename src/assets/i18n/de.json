@@ -12,17 +12,28 @@
     "PASSWORD": "Passwort",
     "USERNAME": "Benutzername",
     "SIGN_IN": "Anmelden",
-    "REGISTER": "Benötigst du ein Konto?",
-    "LOGIN": "Login",
+    "REGISTER": "Benötigen Sie ein Konto?",
+    "LOGIN": "Anmelden",
     "ENROLL": "Registrieren",
-    "EXISTING_ACCOUNT": "Hast du bereits ein bestehendes Konto?",
-    "SIGN_UP": "Registrieren"
+    "EXISTING_ACCOUNT": "Haben Sie bereits ein bestehendes Konto?",
+    "SIGN_UP": "Registrieren",
+    "LOGOUT": "Abmelden",
+    "SUCCESS": "Erfolg",
+    "LOGOUT_MESSAGE": "Sie haben sich erfolgreich abgemeldet"
   },
   "MENU": {
-    "HOME": "Home",
+    "HOME": "Startseite",
     "LOGIN": "Anmelden",
     "REGISTER": "Registrieren",
     "LOGOFF": "Abmelden",
-    "ACCOUNT": "Konto"
+    "ACCOUNT": "Konto",
+    "SETTINGS": "Einstellungen",
+    "NEW_POST": "Neuer Beitrag"
+  },
+  "HERO": {
+    "TITLE": "Aufgebaut mit Angular v16",
+    "SUBTITLE": "Unterstützende Tools: PrimeNG, NgRx und Formly",
+    "PRIME": "PrimeNG",
+    "ANGULAR": "Bild von Angular"
   }
 }

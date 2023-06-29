@@ -8,13 +8,16 @@ import {
 import { LoginRequest } from '../models/login';
 import { AuthResponse } from '../models/auth.response';
 import { environment } from 'src/environments/environment';
-import { Register, RegisterRequest } from '../models/register';
+import { RegisterRequest } from '../models/register';
+import { TranslateService } from '@ngx-translate/core';
+import { AuthMessage } from '../models/auth-message';
+import { Message } from 'primeng/api';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private translate: TranslateService) {}
 
   getUser(response: AuthResponse): CurrentUser {
     return response.user;
@@ -42,5 +45,19 @@ export class AuthService {
     return this.http
       .put<AuthResponse>(url, currentUserRequest)
       .pipe(map(this.getUser));
+  }
+
+  getMessage(): Observable<Message[]> {
+    return this.translate.stream('AUTH').pipe(
+      map((AUTH: AuthMessage) => {
+        return [
+          {
+            severity: 'success',
+            summary: AUTH.SUCCESS,
+            detail: AUTH.LOGOUT_MESSAGE,
+          },
+        ];
+      })
+    );
   }
 }

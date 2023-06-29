@@ -13,16 +13,27 @@
     "USERNAME": "Имя пользователя",
     "SIGN_IN": "Войти",
     "REGISTER": "Нужна учетная запись?",
-    "LOGIN": "Логин",
+    "LOGIN": "Вход",
     "ENROLL": "Зарегистрироваться",
-    "EXISTING_ACCOUNT": "Уже есть существующий аккаунт?",
-    "SIGN_UP": "Зарегистрироваться"
+    "EXISTING_ACCOUNT": "У вас уже есть аккаунт?",
+    "SIGN_UP": "Зарегистрироваться",
+    "LOGOUT": "Выйти",
+    "SUCCESS": "Успех",
+    "LOGOUT_MESSAGE": "Вы успешно вышли из системы"
   },
   "MENU": {
     "HOME": "Главная",
-    "LOGIN": "Войти",
+    "LOGIN": "Вход",
     "REGISTER": "Регистрация",
     "LOGOFF": "Выйти",
-    "ACCOUNT": "Аккаунт"
+    "ACCOUNT": "Аккаунт",
+    "SETTINGS": "Настройки",
+    "NEW_POST": "Новый пост"
+  },
+  "HERO": {
+    "TITLE": "Построен с использованием Angular v16",
+    "SUBTITLE": "Поддерживающие инструменты: PrimeNG, NgRx и Formly",
+    "PRIME": "PrimeNG",
+    "ANGULAR": "Изображение Angular"
   }
 }
