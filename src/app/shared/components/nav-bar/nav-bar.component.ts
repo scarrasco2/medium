@@ -10,6 +10,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NavBarService } from '../../services/nav-bar.service';
 import { ButtonModule } from 'primeng/button';
 import { AppConfigService } from '../../services/app-config.service';
+import { AvatarModule } from 'primeng/avatar';
+import { Store } from '@ngrx/store';
+import { selectCurrentUser } from 'src/app/auth/store/reducers';
+import { combineLatest } from 'rxjs';
 @Component({
   selector: 'medium-nav-bar',
   standalone: true,
@@ -21,15 +25,20 @@ import { AppConfigService } from '../../services/app-config.service';
     FormsModule,
     TranslateModule,
     ButtonModule,
+    AvatarModule,
   ],
   templateUrl: './nav-bar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavBarComponent {
   translate = inject(TranslateService);
+  store = inject(Store);
   navBarService = inject(NavBarService);
   configService = inject(AppConfigService);
-  menu$ = this.navBarService.getMenu();
+  data$ = combineLatest({
+    menu: this.navBarService.getMenu(),
+    user: this.store.select(selectCurrentUser),
+  });
   languages: Language[] = LANGUAGES;
   selectedLanguage: Language = { name: 'English', code: 'EN' };
 
