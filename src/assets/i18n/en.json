@@ -21,7 +21,8 @@
     "SUCCESS": "Success",
     "LOGOUT_MESSAGE": "You have been successfully logged out",
     "ERROR": "Error",
-    "AUTH_FAILURE": "The email or password is incorrect"
+    "LOGIN_FAILURE": "The email or password is incorrect",
+    "REGISTER_FAILURE": "The email or username is already taken"
   },
   "MENU": {
     "HOME": "Home",

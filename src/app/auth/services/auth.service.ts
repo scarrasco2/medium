@@ -61,14 +61,14 @@ export class AuthService {
     );
   }
 
-  getAuthErrorMessage(): Observable<Message[]> {
+  getAuthErrorMessage(isRegister: boolean): Observable<Message[]> {
     return this.translate.stream('AUTH').pipe(
       map((AUTH: AuthMessage) => {
         return [
           {
             severity: 'error',
             summary: AUTH.ERROR,
-            detail: AUTH.AUTH_FAILURE,
+            detail: isRegister ? AUTH.REGISTER_FAILURE : AUTH.LOGIN_FAILURE,
           },
         ];
       })

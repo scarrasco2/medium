@@ -33,11 +33,12 @@ export class RegisterComponent {
   linkText: string = AUTH_REGISTER.LINK_TEXT;
   submit: string = AUTH_REGISTER.SUBMIT;
   submitIcon: string = AUTH_REGISTER.SUBMIT_ICON;
+  isRegister: boolean = true;
 
   data$ = combineLatest({
     isSubmitting: this.store.select(selectIsSubmitting),
     apiErrors: this.store.select(selectValidationErrors),
-    message: this.authService.getAuthErrorMessage(),
+    message: this.authService.getAuthErrorMessage(this.isRegister),
   });
 
   constructor(private _hotkeysService: HotkeysService) {
