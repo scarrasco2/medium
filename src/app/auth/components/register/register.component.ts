@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  inject,
+} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
@@ -19,7 +24,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './register.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnDestroy {
   router = inject(Router);
   store = inject(Store);
   authService = inject(AuthService);
@@ -46,5 +51,9 @@ export class RegisterComponent {
       user: this.form.getRawValue() as Register,
     };
     this.store.dispatch(authActions.register({ request }));
+  }
+
+  ngOnDestroy(): void {
+    this.form.reset();
   }
 }
