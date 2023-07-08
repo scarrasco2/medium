@@ -1,0 +1,12 @@
+<ng-container *ngIf="data$ | async as data">
+  <div class="grid justify-content-evenly m-0">
+    <p-card class="col-12 md:col-9 lg:col-6 xl:col-4" [header]="'MENU.SETTINGS' | translate">
+      <p-messages *ngIf="data.apiErrors" [value]="data.message" [enableService]="false" [closable]="false"></p-messages>
+      <form class="flex flex-column" (ngSubmit)="submit()">
+        <formly-form [fields]="data.fields" [form]="form" [model]="model"></formly-form>
+        <p-button class="align-self-end" type="submit" [loading]="data.isSubmitting"
+          [label]="'AUTH.UPDATE_SETTINGS' | translate"></p-button>
+      </form>
+    </p-card>
+  </div>
+</ng-container>

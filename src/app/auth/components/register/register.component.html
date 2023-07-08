@@ -2,18 +2,16 @@
   <div class="grid justify-content-evenly m-0">
     <p-card class="col-12 md:col-9 lg:col-6 xl:col-4" [header]="title | translate">
       <p-messages *ngIf="data.apiErrors" [value]="data.message" [enableService]="false" [closable]="false"></p-messages>
-      <form [formGroup]="form">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <formly-form [fields]="fields" [form]="form" [model]="model"></formly-form>
-      </form>
-      <ng-template pTemplate="footer">
         <div class="flex flex-wrap justify-content-between">
           <a [routerLink]="[link]">
             <p-button [label]="linkText | translate" [icon]="linkIcon" styleClass="p-button-link"></p-button>
           </a>
-          <p-button [loading]="data.isSubmitting" [label]="submit | translate" type="submit" (click)="onSubmit()"
-            [icon]="submitIcon" [disabled]="form.invalid"></p-button>
+          <p-button [loading]="data.isSubmitting" [label]="submit | translate" type="submit" [icon]="submitIcon"
+            [disabled]="form.invalid"></p-button>
         </div>
-      </ng-template>
+      </form>
     </p-card>
   </div>
 </ng-container>

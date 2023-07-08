@@ -14,14 +14,13 @@ import {
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { registerTranslateExtension } from './translate.extension';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, provideStore } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { AppConfigComponent } from './shared/components/app-config/app-config.component';
 import { HeroComponent } from './shared/components/hero/hero.component';
 import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 import { AuthModule } from './auth/auth.module';
-import { HotkeyModule } from 'angular2-hotkeys';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
@@ -38,7 +37,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
-    HotkeyModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -58,6 +56,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
   ],
   providers: [
+    provideStore(),
     {
       provide: FORMLY_CONFIG,
       multi: true,

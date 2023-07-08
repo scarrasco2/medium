@@ -13,7 +13,6 @@ import {
 } from '../../store/reducers';
 import { Register, RegisterRequest } from '../../models/register';
 import { AuthService } from '../../services/auth.service';
-import { Hotkey, HotkeysService } from 'angular2-hotkeys';
 
 @Component({
   selector: 'medium-register',
@@ -40,15 +39,6 @@ export class RegisterComponent {
     apiErrors: this.store.select(selectValidationErrors),
     message: this.authService.getAuthErrorMessage(this.isRegister),
   });
-
-  constructor(private _hotkeysService: HotkeysService) {
-    this._hotkeysService.add(
-      new Hotkey('enter', (): boolean => {
-        this.onSubmit();
-        return false;
-      })
-    );
-  }
 
   onSubmit(): void {
     if (this.form.invalid) return;

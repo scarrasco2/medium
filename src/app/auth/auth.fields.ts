@@ -3,7 +3,6 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 export const AUTH_EMAIL: FormlyFieldConfig = {
   key: 'email',
   type: 'input',
-  className: 'm-3',
   props: {
     placeholder: 'AUTH.EMAIL',
     required: true,
@@ -22,7 +21,6 @@ export const AUTH_PASSWORD: FormlyFieldConfig = {
 export const AUTH_USERNAME: FormlyFieldConfig = {
   key: 'username',
   type: 'input',
-  className: 'm-3',
   props: {
     placeholder: 'AUTH.USERNAME',
     required: true,

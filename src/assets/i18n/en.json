@@ -22,7 +22,10 @@
     "LOGOUT_MESSAGE": "You have been successfully logged out",
     "ERROR": "Error",
     "LOGIN_FAILURE": "The email or password is incorrect",
-    "REGISTER_FAILURE": "The email or username is already taken"
+    "REGISTER_FAILURE": "The email or username is already taken",
+    "IMAGE": "URL to image",
+    "BIO": "Biography",
+    "UPDATE_SETTINGS": "Update settings"
   },
   "MENU": {
     "HOME": "Home",

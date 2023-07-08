@@ -1,4 +1,9 @@
-import { LOGIN_URL, LOGOUT_URL, REGISTER_URL } from 'src/app/auth/auth.urls';
+import {
+  LOGIN_URL,
+  LOGOUT_URL,
+  REGISTER_URL,
+  SETTINGS_URL,
+} from 'src/app/auth/auth.urls';
 import { Menu } from '../models/menu';
 import { MenuItem } from 'primeng/api';
 
@@ -17,7 +22,7 @@ export function getMenuType(MENU: Menu, isUserLoggedIn: boolean): MenuItem[] {
           {
             label: MENU.SETTINGS,
             icon: 'pi pi-cog',
-            routerLink: REGISTER_URL,
+            routerLink: SETTINGS_URL,
           },
           {
             label: MENU.NEW_POST,
