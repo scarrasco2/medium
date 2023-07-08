@@ -5,9 +5,7 @@ const routes: Routes = [
   {
     path: 'settings',
     loadChildren: () =>
-      import('src/app/shared/components/settings/settings.routes').then(
-        (m) => m.routes
-      ),
+      import('./settings/settings.module').then((m) => m.SettingsModule),
   },
 ];
 

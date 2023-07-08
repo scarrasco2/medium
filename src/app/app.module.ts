@@ -14,7 +14,7 @@ import {
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { registerTranslateExtension } from './translate.extension';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StoreModule, provideStore } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { AppConfigComponent } from './shared/components/app-config/app-config.component';
@@ -56,7 +56,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
   ],
   providers: [
-    provideStore(),
     {
       provide: FORMLY_CONFIG,
       multi: true,

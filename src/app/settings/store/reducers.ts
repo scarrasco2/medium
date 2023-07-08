@@ -6,11 +6,13 @@ import { ApiErrors } from 'src/app/shared/models/api-errors';
 interface SettingsState {
   isSubmitting: boolean;
   validationErrors: ApiErrors | null;
+  updateSuccess: boolean;
 }
 
 const initialState: SettingsState = {
   isSubmitting: false,
   validationErrors: null,
+  updateSuccess: false,
 };
 
 export const settingsFeature = createFeature({
@@ -24,6 +26,7 @@ export const settingsFeature = createFeature({
     on(authActions.updateCurrentUserSuccess, (state) => ({
       ...state,
       isSubmitting: false,
+      updateSuccess: true,
     })),
     on(authActions.updateCurrentUserFailure, (state, action) => ({
       ...state,
@@ -39,4 +42,5 @@ export const {
   reducer: settingsReducer,
   selectValidationErrors,
   selectIsSubmitting,
+  selectUpdateSuccess,
 } = settingsFeature;
