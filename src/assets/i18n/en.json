@@ -25,7 +25,9 @@
     "REGISTER_FAILURE": "The email or username is already taken",
     "IMAGE": "URL to image",
     "BIO": "Biography",
-    "UPDATE_SETTINGS": "Update settings"
+    "UPDATE_SETTINGS": "Update settings",
+    "SETTINGS_SUCCESS": "Settings have been updated",
+    "SETTINGS_FAILURE": "Unable to update settings"
   },
   "MENU": {
     "HOME": "Home",

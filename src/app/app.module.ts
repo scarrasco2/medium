@@ -21,6 +21,7 @@ import { AppConfigComponent } from './shared/components/app-config/app-config.co
 import { HeroComponent } from './shared/components/hero/hero.component';
 import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 import { AuthModule } from './auth/auth.module';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
@@ -45,7 +46,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       },
     }),
     FormlyModule.forRoot(),
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      router: routerReducer,
+    }),
+    StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

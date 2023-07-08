@@ -64,14 +64,27 @@ export class SettingsService {
       })
     );
   }
-  getSettingsErrorMessage(): Observable<Message[]> {
+  getErrorMessage(): Observable<Message[]> {
     return this.translate.stream('AUTH').pipe(
       map((AUTH: AuthMessage) => {
         return [
           {
             severity: 'error',
             summary: AUTH.ERROR,
-            detail: AUTH.LOGIN_FAILURE,
+            detail: AUTH.SETTINGS_FAILURE,
+          },
+        ];
+      })
+    );
+  }
+  getSuccessMessage(): Observable<Message[]> {
+    return this.translate.stream('AUTH').pipe(
+      map((AUTH: AuthMessage) => {
+        return [
+          {
+            severity: 'success',
+            summary: AUTH.SUCCESS,
+            detail: AUTH.SETTINGS_SUCCESS,
           },
         ];
       })

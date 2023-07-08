@@ -14,12 +14,20 @@
     "SIGN_IN": "Anmelden",
     "REGISTER": "Benötigen Sie ein Konto?",
     "LOGIN": "Anmelden",
-    "ENROLL": "Registrieren",
-    "EXISTING_ACCOUNT": "Haben Sie bereits ein bestehendes Konto?",
+    "ENROLL": "Enroll",
+    "EXISTING_ACCOUNT": "Sie haben bereits ein vorhandenes Konto?",
     "SIGN_UP": "Registrieren",
     "LOGOUT": "Abmelden",
     "SUCCESS": "Erfolg",
-    "LOGOUT_MESSAGE": "Sie haben sich erfolgreich abgemeldet"
+    "LOGOUT_MESSAGE": "Sie haben sich erfolgreich abgemeldet",
+    "ERROR": "Fehler",
+    "LOGIN_FAILURE": "Die E-Mail oder das Passwort ist falsch",
+    "REGISTER_FAILURE": "Die E-Mail oder der Benutzername ist bereits vergeben",
+    "IMAGE": "URL zum Bild",
+    "BIO": "Biografie",
+    "UPDATE_SETTINGS": "Einstellungen aktualisieren",
+    "SETTINGS_SUCCESS": "Einstellungen wurden erfolgreich aktualisiert",
+    "SETTINGS_FAILURE": "Einstellungen konnten nicht aktualisiert werden"
   },
   "MENU": {
     "HOME": "Startseite",
@@ -31,7 +39,7 @@
     "NEW_POST": "Neuer Beitrag"
   },
   "HERO": {
-    "TITLE": "Aufgebaut mit Angular v16",
+    "TITLE": "Entwickelt mit Angular v16",
     "SUBTITLE": "Unterstützende Tools: PrimeNG, NgRx und Formly",
     "PRIME": "PrimeNG",
     "ANGULAR": "Bild von Angular"

@@ -26,13 +26,15 @@ export class SettingsComponent {
   form = new FormGroup({});
   data$ = combineLatest({
     fields: this.service.getSettingsFields(),
-    message: this.service.getSettingsErrorMessage(),
-    success: this.store.select(selectUpdateSuccess),
     isSubmitting: this.store.select(selectIsSubmitting),
-    apiErrors: this.store.select(selectValidationErrors),
+    errorMessage: this.service.getErrorMessage(),
+    successMessage: this.service.getSuccessMessage(),
+    apiSuccess: this.store.select(selectUpdateSuccess),
+    apiError: this.store.select(selectValidationErrors),
   });
 
   submit(): void {
+    if (this.form.invalid) return;
     const currentUserRequest: CurrentUserRequest = {
       user: this.form.getRawValue() as any,
     };

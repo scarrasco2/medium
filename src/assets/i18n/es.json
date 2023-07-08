@@ -19,7 +19,15 @@
     "SIGN_UP": "Registrarse",
     "LOGOUT": "Cerrar sesión",
     "SUCCESS": "Éxito",
-    "LOGOUT_MESSAGE": "Has cerrado sesión correctamente"
+    "LOGOUT_MESSAGE": "Has cerrado sesión correctamente",
+    "ERROR": "Error",
+    "LOGIN_FAILURE": "El correo electrónico o la contraseña son incorrectos",
+    "REGISTER_FAILURE": "El correo electrónico o el nombre de usuario ya están en uso",
+    "IMAGE": "URL de la imagen",
+    "BIO": "Biografía",
+    "UPDATE_SETTINGS": "Actualizar configuración",
+    "SETTINGS_SUCCESS": "Se han actualizado las configuraciones",
+    "SETTINGS_FAILURE": "No se pudo actualizar las configuraciones"
   },
   "MENU": {
     "HOME": "Inicio",
@@ -27,11 +35,11 @@
     "REGISTER": "Registrarse",
     "LOGOFF": "Cerrar sesión",
     "ACCOUNT": "Cuenta",
-    "SETTINGS": "Configuración",
+    "SETTINGS": "Configuraciones",
     "NEW_POST": "Nuevo post"
   },
   "HERO": {
-    "TITLE": "Construido con Angular v16",
+    "TITLE": "Creado con Angular v16",
     "SUBTITLE": "Herramientas de soporte: PrimeNG, NgRx y Formly",
     "PRIME": "PrimeNG",
     "ANGULAR": "Imagen de Angular"
