@@ -17,11 +17,13 @@ import { Router } from '@angular/router';
 import { DomHandler } from 'primeng/dom';
 import { Subscription } from 'rxjs';
 import { AppConfigService } from '../../services/app-config.service';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'medium-app-config',
   standalone: true,
   imports: [
     CommonModule,
+    TranslateModule,
     FormsModule,
     ButtonModule,
     InputSwitchModule,

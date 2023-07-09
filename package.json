@@ -7,7 +7,7 @@
     "build": "nx build",
     "watch": "nx build --watch --configuration development",
     "test": "nx test",
-    "dev": "lite-server --baseDir=dist/medium"
+    "dev": "npm run build && lite-server --baseDir=dist/medium"
   },
   "private": true,
   "dependencies": {
