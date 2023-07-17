@@ -162,7 +162,10 @@ export class AppConfigComponent implements OnInit, OnDestroy {
       this.el.nativeElement.contains(event.target)
     );
   }
-
+  setScale(index: number) {
+    this.scale = this.scales[0] + index;
+    this.applyScale();
+  }
   decrementScale() {
     this.scale--;
     this.applyScale();

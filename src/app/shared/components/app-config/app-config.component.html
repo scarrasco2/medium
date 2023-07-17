@@ -7,8 +7,8 @@
         <button icon="pi pi-minus" type="button" pButton (click)="decrementScale()"
           class="p-button-text p-button-rounded w-2rem h-2rem mr-2" [disabled]="scale === scales[0]"></button>
         <div class="flex gap-2 align-items-center">
-          <i class="pi pi-circle-fill text-300" *ngFor="let s of scales"
-            [ngClass]="{'text-primary-500 text-xl': s === scale}"></i>
+          <i class="pi pi-circle-fill text-300 cursor-pointer" *ngFor="let s of scales; index as i"
+            (click)="setScale(i)" [ngClass]="{'text-primary-500 text-xl': s === scale}"></i>
         </div>
         <button icon="pi pi-plus" type="button" pButton (click)="incrementScale()"
           class="p-button-text p-button-rounded w-2rem h-2rem ml-2"
@@ -20,12 +20,12 @@
       <h3>{{'CONFIG.INPUT_STYLE' | translate}}</h3>
       <div class="flex gap-5">
         <div class="flex align-items-center gap-2">
-          <p-radioButton name="inputstyle" value="outlined" [(ngModel)]="config.inputStyle"
+          <p-radioButton name="input-style" value="outlined" [(ngModel)]="config.inputStyle"
             (onClick)="onInputStyleChange()" inputId="input_outlined"></p-radioButton>
           <label for="input_outlined">{{'CONFIG.OUTLINED' | translate}}</label>
         </div>
         <div class="flex align-items-center gap-2">
-          <p-radioButton name="inputstyle" value="filled" [(ngModel)]="config.inputStyle"
+          <p-radioButton name="input-style" value="filled" [(ngModel)]="config.inputStyle"
             (onClick)="onInputStyleChange()" inputId="input_filled"></p-radioButton>
           <label for="input_filled">{{'CONFIG.FILLED' | translate}}</label>
         </div>

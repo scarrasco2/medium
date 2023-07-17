@@ -22,6 +22,7 @@ import { HeroComponent } from './shared/components/hero/hero.component';
 import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 import { AuthModule } from './auth/auth.module';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { FeedModule } from './feed/feed.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
@@ -38,6 +39,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
+    FeedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -58,6 +60,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       trace: false,
       traceLimit: 75,
     }),
+    FeedModule,
   ],
   providers: [
     {
