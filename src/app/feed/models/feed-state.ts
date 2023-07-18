@@ -2,6 +2,6 @@ import { FeedResponse } from './feed-response';
 
 export interface FeedState {
   isLoading: boolean;
-  error: string | null;
+  error: boolean;
   data: FeedResponse | null;
 }

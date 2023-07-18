@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { feedFeature } from './store/reducers';
 import * as feedEffects from './store/effects';
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [FeedComponent],
   imports: [
@@ -21,6 +22,7 @@ import * as feedEffects from './store/effects';
     ProgressSpinnerModule,
     AvatarModule,
     ButtonModule,
+    TranslateModule,
     CardModule,
     TagModule,
     RouterLink,

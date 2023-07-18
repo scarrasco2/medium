@@ -35,7 +35,8 @@ export class FeedComponent {
     error: this.store.select(selectError),
     feed: this.store.select(selectFeedData),
   });
-  limit = environment.limit;
+  rows = environment.limit;
+  first: number = 0;
   baseUrl = this.router.url.split('?')[0];
   currentPage: number = 0;
 
@@ -64,23 +65,20 @@ export class FeedComponent {
   }
 
   fetchFeed(): void {
-    const offset = this.currentPage * this.limit - this.limit;
     const parsedUrl = queryString.parseUrl(this.apiUrl);
     const stringifiedParams = queryString.stringify({
-      limit: this.limit,
-      offset,
+      limit: this.rows,
+      offset: this.first,
       ...parsedUrl.query,
     });
     const apiUrlWithParams = `${parsedUrl.url}?${stringifiedParams}`;
     this.store.dispatch(feedActions.enterFeed());
     this.store.dispatch(feedActions.getFeed({ url: apiUrlWithParams }));
   }
-  first: number = 0;
-
-  rows: number = 10;
 
   onPageChange(event: PageEvent) {
     this.first = event.first;
     this.rows = event.rows;
+    this.fetchFeed();
   }
 }

@@ -1,6 +1,15 @@
 <ng-container *ngIf="data$ | async as data">
-  <p-progressSpinner *ngIf="data.isLoading"></p-progressSpinner>
-  <p-messages *ngIf="data.error" [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
+  <div *ngIf="data.isLoading" class="flex align-items-center">
+    <p-progressSpinner></p-progressSpinner>
+    <span>{{'FEED.LOADING' | translate}}</span>
+  </div>
+  <p-messages *ngIf="data.error" severity="error">
+    <ng-template pTemplate>
+      <i class="pi pi-exclamation-triangle"></i>
+      <div class="ml-2">{{'FEED.ERROR' | translate}}</div>
+      <p-button class="ml-2" [label]="'FEED.RETRY' | translate" styleClass="p-button-danger"
+        (click)="fetchFeed()"></p-button>
+    </ng-template></p-messages>
   <ng-container *ngIf="data.feed">
     <div class="flex flex-column gap-4">
       <p-card [header]="article.title" [subheader]="(article?.createdAt | date) ?? '' "
@@ -27,6 +36,6 @@
       </p-card>
     </div>
   </ng-container>
-  <p-paginator (onPageChange)="onPageChange($any($event))" [first]="first" [rows]="rows" [totalRecords]="120"
-    [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+  <p-paginator class="block mt-4" (onPageChange)="onPageChange($any($event))" [first]="first" [rows]="rows"
+    [totalRecords]="data.feed?.articlesCount!" [rowsPerPageOptions]="[5, 10, 20, 30]"></p-paginator>
 </ng-container>

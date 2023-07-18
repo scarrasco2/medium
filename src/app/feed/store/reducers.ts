@@ -4,7 +4,7 @@ import { FeedState } from '../models/feed-state';
 
 const initialState: FeedState = {
   isLoading: false,
-  error: null,
+  error: false,
   data: null,
 };
 
@@ -18,7 +18,11 @@ export const feedFeature = createFeature({
       isLoading: false,
       data: action.feed,
     })),
-    on(feedActions.getFeedFailure, (state) => ({ ...state, isLoading: false })),
+    on(feedActions.getFeedFailure, (state) => ({
+      ...state,
+      isLoading: false,
+      error: true,
+    })),
     on(feedActions.enterFeed, () => initialState)
   ),
 });

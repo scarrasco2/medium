@@ -13,16 +13,11 @@ import { ImageModule } from 'primeng/image';
       <p-image
         src="assets/svg/angular.svg"
         [alt]="'HERO.ANGULAR | translate'"
-        width="250"
+        width="150"
       ></p-image>
       <h3>
         {{ 'HERO.SUBTITLE' | translate }}
       </h3>
-      <p-button
-        icon="pi pi-prime"
-        [label]="'HERO.PRIME' | translate"
-        styleClass="p-button-link"
-      ></p-button>
     </div>
   `,
   styles: [],

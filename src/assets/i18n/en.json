@@ -2,6 +2,11 @@
   "APP": {
     "EMPTY": ""
   },
+  "FEED": {
+    "LOADING": "Loading...",
+    "ERROR": "Error loading feed",
+    "RETRY": "Retry"
+  },
   "FORM": {
     "VALIDATION": {
       "REQUIRED": "This field is required"
@@ -83,7 +88,7 @@
     "NEW_POST": "New Post"
   },
   "HERO": {
-    "TITLE": "Built by Angular v16",
+    "TITLE": "Powered by Angular v16",
     "SUBTITLE": "Supporting tools PrimeNG, NgRx, and Formly",
     "PRIME": "PrimeNG",
     "ANGULAR": "Image of Angular"
