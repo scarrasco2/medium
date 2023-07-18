@@ -28,7 +28,7 @@
         </div>
         <p>{{ article.description }}</p>
         <div class="flex justify-content-between">
-          <span>Read more...</span>
+          <span>{{'FEED.READ_MORE' | translate}}</span>
           <div class="flex gap-1">
             <p-tag [value]="tag" *ngFor="let tag of article.tagList"></p-tag>
           </div>

@@ -7,6 +7,14 @@
       "REQUIRED": "Este campo es requerido"
     }
   },
+  "FEED": {
+    "LOADING": "Cargando...",
+    "ERROR": "Error al cargar el feed",
+    "RETRY": "Reintentar",
+    "READ_MORE": "Leer más...",
+    "GLOBAL": "Global",
+    "USER": "Usuario"
+  },
   "CONFIG": {
     "COMPONENT_SCALE": "Escala de componentes",
     "INPUT_STYLE": "Estilo de entrada",

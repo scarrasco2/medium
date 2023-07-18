@@ -7,6 +7,14 @@
       "REQUIRED": "Ce champ est requis"
     }
   },
+  "FEED": {
+    "LOADING": "Chargement...",
+    "ERROR": "Erreur lors du chargement du fil d'actualité",
+    "RETRY": "Réessayer",
+    "READ_MORE": "Lire la suite...",
+    "GLOBAL": "Global",
+    "USER": "Utilisateur"
+  },
   "CONFIG": {
     "COMPONENT_SCALE": "Échelle des composants",
     "INPUT_STYLE": "Style de saisie",

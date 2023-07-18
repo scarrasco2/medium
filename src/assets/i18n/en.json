@@ -5,7 +5,10 @@
   "FEED": {
     "LOADING": "Loading...",
     "ERROR": "Error loading feed",
-    "RETRY": "Retry"
+    "RETRY": "Retry",
+    "READ_MORE": "Read more...",
+    "GLOBAL": "Global",
+    "USER": "User"
   },
   "FORM": {
     "VALIDATION": {

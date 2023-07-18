@@ -7,6 +7,14 @@
       "REQUIRED": "Dieses Feld ist erforderlich"
     }
   },
+  "FEED": {
+    "LOADING": "Laden...",
+    "ERROR": "Fehler beim Laden des Feeds",
+    "RETRY": "Erneut versuchen",
+    "READ_MORE": "Mehr lesen...",
+    "GLOBAL": "Global",
+    "USER": "Benutzer"
+  },
   "CONFIG": {
     "COMPONENT_SCALE": "Komponentenskala",
     "INPUT_STYLE": "Eingabe-Stil",
