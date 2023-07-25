@@ -1,0 +1,11 @@
+<ng-container *ngIf="data$ | async as data">
+  <div class="grid justify-content-evenly m-0">
+    <p-card class="col-12 md:col-9 lg:col-6 xl:col-4" [header]="'ARTICLE.CREATE' | translate">
+      <form class="flex flex-column" [formGroup]="form" (ngSubmit)="submit()">
+        <formly-form [fields]="fields" [form]="form" [model]="model"></formly-form>
+        <p-button class="align-self-end" type="submit" icon="pi pi-plus" [disabled]="form.invalid"
+          [loading]="data.isSubmitting" [label]="'ARTICLE.CREATE' | translate"></p-button>
+      </form>
+    </p-card>
+  </div>
+</ng-container>

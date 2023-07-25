@@ -2,6 +2,13 @@
   "APP": {
     "EMPTY": ""
   },
+  "ARTICLE": {
+    "CREATE": "Create post",
+    "TITLE": "Title",
+    "TAGS": "Add tags",
+    "ABOUT": "About",
+    "CONTENT": "Content"
+  },
   "FEED": {
     "LOADING": "Loading...",
     "ERROR": "Error loading feed",

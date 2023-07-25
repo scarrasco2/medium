@@ -25,7 +25,6 @@ import { AuthService } from '../../services/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterComponent implements OnDestroy {
-  router = inject(Router);
   store = inject(Store);
   authService = inject(AuthService);
   form = new FormGroup({});

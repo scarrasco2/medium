@@ -12,6 +12,11 @@ const routes: Routes = [
     path: '',
     component: GlobalFeedComponent,
   },
+  {
+    path: 'article',
+    loadChildren: () =>
+      import('./article/article.module').then((m) => m.ArticleModule),
+  },
 ];
 
 @NgModule({

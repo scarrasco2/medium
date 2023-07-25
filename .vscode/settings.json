@@ -7,5 +7,11 @@
     "primeng",
     "radiobutton"
   ],
-  "conventionalCommits.scopes": ["auth", "translate", "nav-bar", "feed"]
+  "conventionalCommits.scopes": [
+    "auth",
+    "translate",
+    "nav-bar",
+    "feed",
+    "article"
+  ]
 }

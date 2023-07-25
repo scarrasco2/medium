@@ -6,6 +6,7 @@ import {
 } from 'src/app/auth/auth.urls';
 import { Menu } from '../models/menu';
 import { MenuItem } from 'primeng/api';
+import { CREATE_POST } from 'src/app/article/article.urls';
 
 export function getMenuType(MENU: Menu, isUserLoggedIn: boolean): MenuItem[] {
   if (isUserLoggedIn)
@@ -27,7 +28,7 @@ export function getMenuType(MENU: Menu, isUserLoggedIn: boolean): MenuItem[] {
           {
             label: MENU.NEW_POST,
             icon: 'pi pi-plus',
-            routerLink: LOGIN_URL,
+            routerLink: CREATE_POST,
           },
         ],
       },
