@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GlobalFeedComponent } from './shared/components/global-feed/global-feed.component';
+import { ArticleComponent } from './article/components/article/article.component';
 
 const routes: Routes = [
   {

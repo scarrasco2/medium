@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment.development';
 @Injectable({
   providedIn: 'root',
 })
-export class CreateArticleService {
+export class ArticleService {
   constructor(private http: HttpClient) {}
 
   createArticle(articleRequest: ArticleRequest): Observable<Article> {
@@ -17,6 +17,18 @@ export class CreateArticleService {
 
     return this.http
       .post<ArticleResponse>(fullUrl, articleRequest)
+      .pipe(map((response) => response.article));
+  }
+
+  deleteArticle(slug: string): Observable<{}> {
+    const fullUrl = `${environment.apiUrl}/articles/${slug}`;
+    return this.http.delete(fullUrl);
+  }
+
+  getArticle(slug: string): Observable<Article> {
+    const fullUrl = `${environment.apiUrl}/articles/${slug}`;
+    return this.http
+      .get<ArticleResponse>(fullUrl)
       .pipe(map((response) => response.article));
   }
 }

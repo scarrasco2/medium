@@ -1,39 +1,62 @@
 import { routerNavigationAction } from '@ngrx/router-store';
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { ApiErrors } from 'src/app/shared/models/api-errors';
-import { createArticleActions } from './action';
+import { ArticleActions } from './action';
+import { Article } from 'src/app/shared/models/article';
 
-export interface CreateArticleState {
+export interface ArticleState {
   isSubmitting: boolean;
   validationErrors: ApiErrors | null;
   isSuccess: boolean;
+  isLoading: boolean;
+  error: string | null;
+  data: Article | null;
 }
 
-const initialState: CreateArticleState = {
+const initialState: ArticleState = {
   isSubmitting: false,
   validationErrors: null,
   isSuccess: false,
+  isLoading: false,
+  error: null,
+  data: null,
 };
 
 export const articleFeature = createFeature({
   name: 'createArticle',
   reducer: createReducer(
     initialState,
-    on(createArticleActions.createArticle, (state) => ({
+    on(ArticleActions.createArticle, (state) => ({
       ...state,
       isSubmitting: true,
     })),
-    on(createArticleActions.createArticleSuccess, (state) => ({
+    on(ArticleActions.createArticleSuccess, (state) => ({
       ...state,
       isSubmitting: false,
       isSuccess: true,
     })),
-    on(createArticleActions.createArticleFailure, (state, action) => ({
+    on(ArticleActions.createArticleFailure, (state, action) => ({
       ...state,
       isSubmitting: false,
       validationErrors: action.errors,
     })),
-    on(routerNavigationAction, () => initialState)
+    on(routerNavigationAction, () => initialState),
+    on(ArticleActions.getArticle, (state) => ({ ...state, isLoading: true })),
+    on(ArticleActions.getArticleSuccess, (state, action) => ({
+      ...state,
+      isLoading: false,
+      data: action.article,
+    })),
+    on(ArticleActions.getArticleFailure, (state) => ({
+      ...state,
+      isLoading: false,
+    })),
+    on(routerNavigationAction, () => initialState),
+    on(ArticleActions.getArticleFromStore, (state, action) => ({
+      ...state,
+      isLoading: false,
+      data: action.article,
+    }))
   ),
 });
 
@@ -43,4 +66,7 @@ export const {
   selectIsSubmitting,
   selectValidationErrors,
   selectIsSuccess,
+  selectIsLoading,
+  selectError,
+  selectData: selectArticleData,
 } = articleFeature;

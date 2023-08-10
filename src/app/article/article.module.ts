@@ -14,8 +14,9 @@ import { articleFeature } from './store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import * as articleEffects from './store/effects';
+import { ArticleComponent } from './components/article/article.component';
 @NgModule({
-  declarations: [CreateArticleComponent, EditArticleComponent],
+  declarations: [CreateArticleComponent, EditArticleComponent, ArticleComponent],
   imports: [
     CommonModule,
     ArticleRoutingModule,

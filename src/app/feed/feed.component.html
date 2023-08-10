@@ -12,28 +12,31 @@
     </ng-template></p-messages>
   <ng-container *ngIf="data.feed">
     <div class="flex flex-column gap-4">
-      <p-card [header]="article.title" [subheader]="(article?.createdAt | date) ?? '' "
-        *ngFor="let article of data.feed.articles">
-        <div class="flex align-items-center justify-content-between">
-          <div>
-            <a [routerLink]="['/profiles', article.author.username]">
-              <p-avatar shape="circle" [image]="article.author.image"></p-avatar>
-            </a>
-            <a [routerLink]="['/profiles', article.author.username]">
-              <p-button [label]="article.author.username" styleClass="p-button-link"></p-button>
-            </a>
-          </div>
-          <p-button icon="pi pi-heart" [label]="article.favoritesCount.toString()"
-            styleClass="p-button-rounded p-button-help"></p-button>
-        </div>
-        <p>{{ article.description }}</p>
-        <div class="flex justify-content-between">
-          <span>{{'FEED.READ_MORE' | translate}}</span>
-          <div class="flex gap-1">
-            <p-tag [value]="tag" *ngFor="let tag of article.tagList"></p-tag>
-          </div>
-        </div>
-      </p-card>
+      <ng-container *ngFor="let article of data.feed.articles">
+        <a [routerLink]="['/article', article.slug]" class="no-underline">
+          <p-card [header]="article.title" [subheader]="(article?.createdAt | date) ?? '' ">
+            <div class="flex align-items-center justify-content-between">
+              <div>
+                <a [routerLink]="['/profiles', article.author.username]">
+                  <p-avatar shape="circle" [image]="article.author.image"></p-avatar>
+                </a>
+                <a [routerLink]="['/profiles', article.author.username]">
+                  <p-button [label]="article.author.username" styleClass="p-button-link"></p-button>
+                </a>
+              </div>
+              <p-button icon="pi pi-heart" [label]="article.favoritesCount.toString()"
+                styleClass="p-button-rounded p-button-help"></p-button>
+            </div>
+            <p>{{ article.description }}</p>
+            <div class="flex justify-content-between">
+              <span>{{'FEED.READ_MORE' | translate}}</span>
+              <div class="flex gap-1">
+                <p-tag [value]="tag" *ngFor="let tag of article.tagList"></p-tag>
+              </div>
+            </div>
+          </p-card>
+        </a>
+      </ng-container>
     </div>
   </ng-container>
   <p-paginator class="block mt-4" (onPageChange)="onPageChange($any($event))" [first]="first" [rows]="rows"
