@@ -1,41 +1,41 @@
 <ng-container *ngIf="data$ | async as data">
   <div *ngIf="data.isLoading" class="flex align-items-center">
     <p-progressSpinner></p-progressSpinner>
-    <span>{{'FEED.LOADING' | translate}}</span>
+    <span>{{ "FEED.LOADING" | translate }}</span>
   </div>
   <p-messages *ngIf="data.error" severity="error">
     <ng-template pTemplate>
       <i class="pi pi-exclamation-triangle"></i>
-      <div class="ml-2">{{'FEED.ERROR' | translate}}</div>
+      <div class="ml-2">{{ "FEED.ERROR" | translate }}</div>
       <p-button class="ml-2" [label]="'FEED.RETRY' | translate" styleClass="p-button-danger"
         (click)="fetchFeed()"></p-button>
     </ng-template></p-messages>
   <ng-container *ngIf="data.feed">
     <div class="flex flex-column gap-4">
       <ng-container *ngFor="let article of data.feed.articles">
-        <a [routerLink]="['/article', article.slug]" class="no-underline">
-          <p-card [header]="article.title" [subheader]="(article?.createdAt | date) ?? '' ">
-            <div class="flex align-items-center justify-content-between">
-              <div>
-                <a [routerLink]="['/profiles', article.author.username]">
-                  <p-avatar shape="circle" [image]="article.author.image"></p-avatar>
-                </a>
-                <a [routerLink]="['/profiles', article.author.username]">
-                  <p-button [label]="article.author.username" styleClass="p-button-link"></p-button>
-                </a>
-              </div>
-              <p-button icon="pi pi-heart" [label]="article.favoritesCount.toString()"
-                styleClass="p-button-rounded p-button-help"></p-button>
+        <p-card [header]="article.title" [subheader]="(article?.createdAt | date) ?? ''">
+          <div class="flex align-items-center justify-content-between">
+            <div>
+              <a [routerLink]="['/profiles', article.author.username]">
+                <p-avatar shape="circle" [image]="article.author.image"></p-avatar>
+              </a>
+              <a [routerLink]="['/profiles', article.author.username]">
+                <p-button [label]="article.author.username" styleClass="p-button-link"></p-button>
+              </a>
             </div>
-            <p>{{ article.description }}</p>
-            <div class="flex justify-content-between">
-              <span>{{'FEED.READ_MORE' | translate}}</span>
-              <div class="flex gap-1">
-                <p-tag [value]="tag" *ngFor="let tag of article.tagList"></p-tag>
-              </div>
+            <p-button icon="pi pi-heart" [label]="article.favoritesCount.toString()"
+              styleClass="p-button-rounded p-button-help"></p-button>
+          </div>
+          <p>{{ article.description }}</p>
+          <div class="flex justify-content-between">
+            <a [routerLink]="['/article', article.slug]" class="no-underline">
+              <span>{{ "FEED.READ_MORE" | translate }}</span>
+            </a>
+            <div class="flex gap-1">
+              <p-tag [value]="tag" *ngFor="let tag of article.tagList"></p-tag>
             </div>
-          </p-card>
-        </a>
+          </div>
+        </p-card>
       </ng-container>
     </div>
   </ng-container>

@@ -47,7 +47,6 @@ export class FeedComponent {
   ) {}
 
   ngOnInit(): void {
-    this.store.dispatch(feedActions.enterFeed());
     this.route.queryParams.subscribe((params: Params) => {
       this.currentPage = Number(params['page'] || '1');
       this.fetchFeed();
@@ -77,6 +76,7 @@ export class FeedComponent {
   }
 
   onPageChange(event: PageEvent) {
+    this.store.dispatch(feedActions.paginationChange());
     this.first = event.first;
     this.rows = event.rows;
     this.fetchFeed();

@@ -1,17 +1,17 @@
 <ng-container *ngIf="data$ | async as data">
-  <div class="article-page">
-    <div class="banner">
+  <div class="grid justify-content-center w-full px-3">
+    <div class="col-12 md:col-9 lg:col-4">
       <div class="container" *ngIf="data.article">
         <h1>{{ data.article.title }}</h1>
         <div class="article-meta">
-          <a [routerLink]="['/profiles', data.article.author.username]">
-            <img [src]="data.article.author.image" />
-          </a>
-          <div class="info">
+          <div class="flex gap-2 align-items-center">
+            <a [routerLink]="['/profiles', data.article.author.username]">
+              <p-avatar shape="circle" [image]="data.article.author.image"></p-avatar>
+            </a>
             <a [routerLink]="['/profiles', data.article.author.username]">
               {{ data.article.author.username }}
             </a>
-            <span class="data">{{ data.article.createdAt }}</span>
+            <span>{{ data.article.createdAt | date }}</span>
           </div>
           <span *ngIf="data.isAuthor">
             <a [routerLink]="['/articles', data.article.slug, 'edit']" class="btn btn-outline-secondary btn-sm">
@@ -24,13 +24,13 @@
           </span>
         </div>
       </div>
-    </div>
-    <div class="container page">
-
-      <div class="row article-content" *ngIf="data.article">
-        <div class="col-xs-12">
-          <div>
-            <p>{{ data.article.body }}</p>
+      <p-divider></p-divider>
+      <div class="container page">
+        <div class="row article-content" *ngIf="data.article">
+          <div class="col-xs-12">
+            <div>
+              <p>{{ data.article.body }}</p>
+            </div>
           </div>
         </div>
       </div>

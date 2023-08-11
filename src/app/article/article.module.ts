@@ -10,13 +10,19 @@ import { ButtonModule } from 'primeng/button';
 import { MessagesModule } from 'primeng/messages';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { DividerModule } from 'primeng/divider';
 import { articleFeature } from './store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import * as articleEffects from './store/effects';
 import { ArticleComponent } from './components/article/article.component';
+import { AvatarModule } from 'primeng/avatar';
 @NgModule({
-  declarations: [CreateArticleComponent, EditArticleComponent, ArticleComponent],
+  declarations: [
+    CreateArticleComponent,
+    EditArticleComponent,
+    ArticleComponent,
+  ],
   imports: [
     CommonModule,
     ArticleRoutingModule,
@@ -25,8 +31,10 @@ import { ArticleComponent } from './components/article/article.component';
     FormlyPrimeNGModule,
     CardModule,
     ButtonModule,
+    DividerModule,
     MessagesModule,
     TranslateModule,
+    AvatarModule,
     StoreModule.forFeature(articleFeature),
     EffectsModule.forFeature(articleEffects),
   ],

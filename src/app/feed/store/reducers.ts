@@ -23,7 +23,14 @@ export const feedFeature = createFeature({
       isLoading: false,
       error: true,
     })),
-    on(feedActions.enterFeed, () => initialState)
+    on(feedActions.enterFeed, (state) => ({
+      ...state,
+    })),
+    on(feedActions.getFeedFromStore, (state) => ({
+      ...state,
+      isLoading: false,
+    })),
+    on(feedActions.paginationChange, () => initialState)
   ),
 });
 
